@@ -13,21 +13,21 @@ import AuthLinks from '@/components/auth-links/AuthLinks';
 
 const socials = [{
     name: "facebook",
-    icon: <IoLogoFacebook className='w-full h-full' fill='blue'/>
+    icon: <IoLogoFacebook className='w-full h-full' fill='#0984e3'/>
 },
 {
     name: "ins",
-    icon: <PiInstagramLogoFill className='w-full h-full' fill='purple' 
+    icon: <PiInstagramLogoFill className='w-full h-full' fill='#fd79a8' 
      />
 },
 {
     name: "youtube",
-    icon: <IoLogoYoutube className='w-full h-full' fill='red'
+    icon: <IoLogoYoutube className='w-full h-full' fill='#d63031'
      />
 },
 {
     name: "tiktok",
-    icon: <AiFillTikTok className='w-full h-full' fill='black'
+    icon: <AiFillTikTok className='w-full h-full' fill='#2d3436'
      />
 },
 ]
@@ -44,27 +44,23 @@ const links = [
      {
         name: "About",
         path: "/"
-    },
-    {
-        name: "Login",
-        path: "/"
     }
 ]
 
 export default function Navbar() {
    const pathname = usePathname()
   return (
-    <div className='flex justify-between items-center h-[100px]'>
-      <div className='logo flex gap-[10px] flex-1'>
+    <div className='flex justify-between items-center h-[100px] relative'>
+      <div className='logo hidden lg:flex gap-[10px] flex-1 '>
         {socials.map((social, index) => <div key={index} className='w-6 h-6'>{social.icon}</div>)}
       </div>
-      <h1 className='flex-1 text-center'>
-        Vibe Zone
+      <h1 className='flex-1 text-start lg:text-center md:text-2xl lg:text-[32px] xl:text-4xl font-bold'>
+       My Blog App
       </h1>
-      <div className='flex items-center gap-5 flex-1'>
+      <div className='flex items-center max-sm:justify-end text-[18px] gap-[15px] xl:text-xl xl:gap-5 flex-1'>
         <ThemeToggle/>
-        {links.map((item, index) => <Link key={index} href={item.path} className={`${pathname.includes(item.path) ? "text-red-500" : ""}`}>{item.name}</Link>)}
-        <AuthLinks/>
+        {links.map((item, index) => <Link key={index} href={item.path} className={` max-sm:hidden ${pathname.includes(item.path) ? "text-red-500" : ""} `}>{item.name}</Link>)}
+        <AuthLinks links = {links}/>
       </div>
     </div>
   )
