@@ -50,7 +50,7 @@ const links = [
 export default function Navbar() {
    const pathname = usePathname()
   return (
-    <div className='flex justify-between items-center h-[100px] relative'>
+    <div className='flex justify-between items-center h-[100px] relative z-[99]'>
       <div className='logo hidden lg:flex gap-[10px] flex-1 '>
         {socials.map((social, index) => <div key={index} className='w-6 h-6'>{social.icon}</div>)}
       </div>

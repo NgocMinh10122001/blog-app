@@ -5,6 +5,7 @@ import Navbar from "@/components/layout/navbar/Navbar";
 import Footer from "@/components/layout/footer/Footer";
 import ClientLayout from "@/components/layout/ClientLayout";
 import { ThemeProvider } from "@/context/ThemeContext";
+import AuthProvider from "@/providers/AuthProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,16 +22,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <html lang="en">
-      <body className={inter.className}>
-        <ThemeProvider>
-          <ClientLayout>
-            <Navbar />
-            {children}
-            <Footer />
-          </ClientLayout>
-        </ThemeProvider>
-      </body>
-    </html>
+        <body className={inter.className}>
+          <AuthProvider>
+            <ThemeProvider>
+              <ClientLayout>
+                <Navbar />
+                {children}
+                <Footer />
+              </ClientLayout>
+            </ThemeProvider>
+          </AuthProvider>
+        </body>
+      </html>
     </html>
   );
 }

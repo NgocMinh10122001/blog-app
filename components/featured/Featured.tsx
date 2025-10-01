@@ -4,11 +4,11 @@ import React from 'react'
 export default function Featured() {
   return (
     <div className='mt-[30px] '>
-      <h1 className='text-[96px] font-light '>
+      <h1 className='text-[36px] sm:text-[48px] md:text-[64px] lg:text-[72px] xl:text-[96px] font-light '>
         <b className='font-bold'>Hey, Iam dev here!</b> Discover my stories creative ideas.
       </h1>
       <div className='flex justify-between gap-[50px] mt-[60px]'>
-        <div className='flex-1 relative h-[500px] rounded-md overflow-hidden'>
+        <div className='max-lg:hidden flex-1 relative h-[500px] rounded-md overflow-hidden'>
           <Image src ="/imgs/ph.jpg" alt='' fill className='object-cover'/>
         </div>
         <div className='flex-1 !space-y-5 flex flex-col justify-center'>

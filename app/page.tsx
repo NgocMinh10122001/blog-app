@@ -8,10 +8,10 @@ export default function Home() {
     <div className="">
       <Featured/>
       <CategoryList/>
-      <div className="flex">
-        <CardList/>
+      {/* <div className="flex">
+       <CardList page={10}/>
         <Menu/>
-      </div>
+      </div> */}
     </div>
   );
 }
